@@ -1,0 +1,55 @@
+.Header-div {
+    display: flex;
+    justify-content: center;
+    
+}
+.Header-div nav {
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  gap: 28.5em;
+  width: 72%;
+  font: 400 16px "Roboto", sans-serif;
+
+}
+
+.Company-info {
+  display: flex;
+  justify-content: flex-end;
+  gap: 3em;
+  /* margin-right: 15em; */
+}
+
+.Logotype {
+    text-align: center;
+    /* margin-left: 18em; */
+}
+
+#Logotype {
+  width: 180px;
+  height: 49px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 49px;
+
+  background: linear-gradient(90deg, #6f00ff 0%, #05fff1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.Company-info a {
+    color: white;
+}
+
+
+.Company-info a:hover {
+    color: #6f00ff
+}
+
+.active {
+    color: #05fff1 !important;
+}

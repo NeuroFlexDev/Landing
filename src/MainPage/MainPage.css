@@ -16,6 +16,20 @@
   text-align: center;
   width: 70%;
   height: 80%;
+  
+}
+
+.Innovation-text::before {
+  content: ''; /* Псевдо-элемент для размытия */
+  position: absolute;
+  top: -10px; /* Небольшое смещение для того, чтобы блюр выходил за пределы блока */
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: rgb(0, 0, 0); /* Полупрозрачный фон */
+  filter: blur(10px); /* Эффект размытия */
+  z-index: -1; /* Ставим позади текста */
+  border-radius: 20px; /* Радиус скругления для плавности */
 }
 
 .Innovation-text h1 {
@@ -45,7 +59,7 @@
   height: 58px;
   border: 1.5px solid #b388eb;
   border-radius: 22px;
-  background-color: transparent;
+  background-color: #1b1f2ab1;
   color: #b388eb;
   font: 400 1rem "Roboto", sans-serif;
   margin-bottom: 10%;
@@ -85,4 +99,95 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+
+
+.MainPage {
+  position: relative;
+  height: 100vh; /* Заполняет весь экран */
+}
+
+.Ball-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Чтобы шарики не мешали взаимодействию с другими элементами */
+  z-index: -1; /* Шарики на фоне */
+}
+
+.Ball {
+  /* width: 50px; Примерный размер шарика */
+  /* height: 50px; Примерный размер шарика */
+  border-radius: 50%; /* Сделаем шарик круглым */
+  background: linear-gradient(135deg, #B388EB, #00AEA4); /* Градиент от сиреневого к бирюзовому */
+  position: absolute;
+  /* Добавление эффекта размытия */
+  /* filter: blur(7px); Легкое размытие, можно настроить */
+  
+  /* Добавление тени */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для объема */
+  
+  /* Плавный переход для эффектов */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  
+  /* Применяем затемнение */
+  background: linear-gradient(135deg, rgba(179, 136, 235, 1), rgba(0, 174, 164, 1)); /* Уменьшаем непрозрачность, чтобы сделать цвет более мягким */
+}
+
+/* Эффект на hover */
+.Ball:hover {
+  transform: scale(1.1); /* Увеличение шарика при наведении */
+  filter: blur(0px); /* Снимаем размытие при наведении */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Увеличиваем тень */
+}
+
+
+/* Анимация покачивания по оси X */
+@keyframes wobbleX {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+/* Анимация покачивания по оси Y */
+@keyframes wobbleY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+/* Анимация для линий (лучей) */
+@keyframes line-animation {
+  0% {
+    width: 0px; /* Начальная ширина линии */
+    opacity: 1;
+  }
+  100% {
+    width: 100%; /* Конечная ширина линии (достигает расстояния между шариками) */
+    opacity: 0; /* Пропадает по мере завершения анимации */
+  }
+}
+
+.Line {
+  background-color: #b388eb; /* Цвет линии */
+}
+
+
+.Line {
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+  opacity: 1;
+  background: linear-gradient(90deg, #ffffff1d 0%, #ffe4bc95 100%);
+  background-size: 200% 100%;
+  z-index: -2;
 }

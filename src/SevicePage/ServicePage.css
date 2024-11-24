@@ -29,7 +29,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  flex: 1 1 250px; /* Добавляем flex-grow, flex-shrink, и минимальную ширину */
   max-width: 350px;
   padding: 20px;
   background-color: #2c2f38;
@@ -66,34 +66,15 @@
 
 /* Медиазапросы для адаптивности */
 
-/* Для экранов шириной 1200px и меньше */
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
   .Service-blocks {
     gap: 20px;
   }
   .Card {
-    max-width: 300px;
+    flex: 1 1 45%; /* Две карточки в строку */
   }
 }
 
-/* Для экранов шириной 992px и меньше - 2 карточки в строку */
-@media (max-width: 992px) {
-  .Service-blocks {
-    justify-content: space-around;
-  }
-  .Card {
-    max-width: 45%; /* Две карточки в строку */
-  }
-}
-
-/* Для экранов шириной 768px и меньше - 2 карточки в строку */
-@media (max-width: 768px) {
-  .Card {
-    max-width: 100%;
-  }
-}
-
-/* Для экранов шириной 576px и меньше - 1 карточка в строку */
 @media (max-width: 576px) {
   #services-p {
     font-size: 36px;

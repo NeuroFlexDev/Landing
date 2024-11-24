@@ -7,23 +7,23 @@ import { HumanIcon } from "./Icons/HumanIcon";
 
 const services = [
   {
-    icon: <MicroscopeIcon className="Card-Icon" />,
+    icon: <MicroscopeIcon />,
     title: "Исследования и разработки в области машинного обучения",
     description: "Инновационные исследования для развития ML-технологий",
   },
   {
-    icon: <RobotIcon className="Card-Icon" />,
+    icon: <RobotIcon />,
     title: "Разработка и внедрение ML-решений для бизнеса",
     description:
       "Разработка индивидуальных решений для бизнеса на базе машинного обучения",
   },
   {
-    icon: <GraphicIcon className="Card-Icon" />,
+    icon: <GraphicIcon />,
     title: "Анализ данных и построение предсказательных моделей",
     description: "Анализируем данные для создания предсказательных моделей",
   },
   {
-    icon: <HumanIcon className="Card-Icon" />,
+    icon: <HumanIcon />,
     title: "Обучение и поддержка команд клиентов в ML",
     description: "Обучаем и поддерживаем команды клиентов в ML",
   },

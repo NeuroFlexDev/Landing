@@ -4,34 +4,120 @@
   color: #e0e0e0;
   align-items: center;
   flex-direction: column;
+  padding: 20px;
 }
 
 #services-p {
   font-family: "Montserrat";
   font-size: 48px;
   font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .Service-blocks {
   display: flex;
-  flex-direction: row;
-}
-
-.Cards {
-  width: 350px;
-  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
 }
 
-.Card-1 {
+.Card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  background-color: #2c2f38;
+  border-radius: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.MicroscopeIcon {
+.Card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.Card-Icon {
   color: #00aea4;
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+
+#card-header {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#card-description {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Медиазапросы для адаптивности */
+
+/* Для экранов шириной 1200px и меньше */
+@media (max-width: 1200px) {
+  .Service-blocks {
+    gap: 20px;
+  }
+  .Card {
+    max-width: 300px;
+  }
+}
+
+/* Для экранов шириной 992px и меньше - 2 карточки в строку */
+@media (max-width: 992px) {
+  .Service-blocks {
+    justify-content: space-around;
+  }
+  .Card {
+    max-width: 45%; /* Две карточки в строку */
+  }
+}
+
+/* Для экранов шириной 768px и меньше - 2 карточки в строку */
+@media (max-width: 768px) {
+  .Card {
+    max-width: 100%;
+  }
+}
+
+/* Для экранов шириной 576px и меньше - 1 карточка в строку */
+@media (max-width: 576px) {
+  #services-p {
+    font-size: 36px;
+  }
+
+  .Service-blocks {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .Card {
+    width: 100%;
+    max-width: 100%; /* Полная ширина для каждой карточки */
+  }
+
+  .Card-Icon {
+    font-size: 60px;
+  }
+
+  #card-header {
+    font-size: 18px;
+  }
+
+  #card-description {
+    font-size: 14px;
+  }
 }

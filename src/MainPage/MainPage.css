@@ -69,37 +69,6 @@
   display: flex;
 }
 
-.Neuroflex-team {
-  color: white;
-  display: flex;
-  justify-content: center;
-  width: 70%;
-  gap: 4.5em;
-}
-
-.Neuroflex-team-left {
-  width: 50%;
-  font-family: "Montserrat";
-  font-style: italic;
-  font-weight: 600;
-  font-size: 36px;
-}
-
-.Neuroflex-team-right {
-  width: 50%;
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-}
-
-.Neuroflex-team-right span {
-  background: linear-gradient(93.41deg, #b388eb 0%, #00aea4 60%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
 
 
 .MainPage {

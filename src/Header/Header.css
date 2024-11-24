@@ -1,26 +1,36 @@
 .Header-div {
   display: flex;
-  position: fixed; /* Фиксация хедера */
-  top: 0; /* Закрепить хедер сверху */
-  width: 100%; /* Чтобы хедер растягивался на всю ширину */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
   justify-content: space-between;
-  margin-right: 360px;
-  margin-left: 360px;
   align-items: center;
-  z-index: 1000; /* Чтобы хедер был поверх других элементов */
-  transition: background-color 0.3s ease; /* Плавное изменение фона */
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.Header-div.scrolled {
+  background-color: rgba(0, 0, 0, 0.302) !important;
 }
 
 .nav-buttons {
   display: flex;
   align-items: center;
+  margin-right: 360px;
 }
 
 .nav-div {
+  text-decoration: none;
   margin-left: 20px;
   white-space: nowrap;
   color: white;
   font: 400 20px "Roboto", sans-serif;
+}
+
+.nav-div:hover{
+  color: #6F00FF;
 }
 
 #Logotype {
@@ -35,9 +45,70 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  margin-left: 360px;
 }
 
-/* Класс для затемнения фона хедера */
-.Header-div.scrolled {
-  background-color: rgba(0, 0, 0, 0.8); /* Темный фон */
+/* Бургер-меню */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 25%;
+}
+
+.burger-line {
+  min-width: 20px;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Адаптивность для планшетов и телефонов */
+@media (max-width: 1024px) {
+  .Header-div {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-buttons {
+    margin-right: 25%;
+    display: none; /* Скрываем меню по умолчанию */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  #Logotype {
+    margin-left: 25%;
+    font-size: 35px;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  #Logotype {
+    font-size: 35px;
+    margin-left: 25%;
+  }
+
+  .nav-div {
+    font-size: 18px;
+  }
+}
+
+/* Показ меню при активации бургер-меню */
+.nav-buttons.active {
+  display: flex;
+  position: absolute;
+  left: 200px;
+
 }

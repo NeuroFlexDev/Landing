@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./MainPage.css";
-import { ArrowDown } from "./ArrowDown";
 
-export const MainPage = () => {
+export const MainPage = ({ scrollToAbout }) => {
   const [ballPositions, setBallPositions] = useState([]);
   const [lines, setLines] = useState([]);
   const ballRefs = useRef([]);
@@ -132,8 +131,8 @@ export const MainPage = () => {
           в сфере ИИ и ML
         </p>
         <div className="Buttons-div">
-          <button className="More-button">Узнать больше</button>
-          <ArrowDown />
+          <button className="More-button" onClick={scrollToAbout}>Узнать больше</button>
+          {/* <ArrowDown /> */}
         </div>
       </div>
 
@@ -148,7 +147,7 @@ export const MainPage = () => {
               top: pos.top,
               left: pos.left,
               width: pos.width,
-              height: pos.width, 
+              height: pos.width,
               filter: `blur(${pos.blur})`, // Применяем случайный блюр
               animation: `wobbleX ${pos.speedX}s infinite ease-in-out, wobbleY ${pos.speedY}s infinite ease-in-out`,
               animationDirectionX: pos.directionX === 1 ? "normal" : "reverse",
@@ -165,12 +164,10 @@ export const MainPage = () => {
           const { centerX: startX, centerY: startY } = getBallCenter(startBall);
           const { centerX: endX, centerY: endY } = getBallCenter(endBall);
 
-          // Вычисление расстояния между центрами шариков
           const distance = Math.sqrt(
             Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2)
           );
 
-          // Вычисление угла наклона линии
           const angle = Math.atan2(endY - startY, endX - startX);
 
           return (
@@ -179,13 +176,13 @@ export const MainPage = () => {
               className="Line"
               style={{
                 left: startX + "px",
-                top: startY - 120 + "px", // смещение с учётом прокрутки
+                top: startY + "px",
                 transformOrigin: "top left",
-                width: "0px", // Начальная ширина 0, чтобы линия могла "вырастать"
-                height: "2px", // Высота линии
+                width: "0px",
+                height: "2px",
                 position: "absolute",
                 transform: `rotate(${angle}rad)`,
-                animation: `line-animation ${line.duration}s ease-out`, // Анимация для роста линии
+                animation: `line-animation ${line.duration}s ease-out`,
                 opacity: line.opacity,
               }}
             />

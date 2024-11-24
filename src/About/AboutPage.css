@@ -1,6 +1,8 @@
 .AboutPage-div {
     display: flex;
     justify-content: center;
+
+    padding-top: 120px;
 }
 .Neuroflex-team {
     color: white;

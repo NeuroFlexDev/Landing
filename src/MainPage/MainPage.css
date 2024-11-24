@@ -4,12 +4,17 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
   overflow-x: hidden; /* Запрещаем горизонтальную прокрутку */
+  max-width: 100vw;
+
 
 }
 
 .Innovation-text {
+  margin-top: 220px;
+  max-width: 100vw; /* Ограничение ширины блока */
+
+
   color: white;
   display: flex;
   flex-direction: column;
@@ -25,11 +30,12 @@
 
 .Innovation-text h1 {
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 66px;
   font-family: "Montserrat", sans-serif;
 }
 
 .Innovation-text p {
+  max-width: 70%;
   font: 500 2rem "Montserrat", sans-serif;
 }
 
@@ -56,6 +62,10 @@
   margin-bottom: 10%;
 }
 
+.More-button:hover{
+  background-color: rgba(255, 255, 255, 0.213);
+}
+
 .Arrow-in-circle {
   display: flex;
 }
@@ -72,9 +82,12 @@
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100vw; /* Ограничение ширины контейнера шариков */
   height: 100%;
   pointer-events: none; /* Чтобы шарики не мешали взаимодействию с другими элементами */
   z-index: -1; /* Шарики на фоне */
+  overflow: hidden; /* Обрезка выходящих за пределы элементов */
+
 }
 
 .Ball {
@@ -150,4 +163,120 @@
   background: linear-gradient(90deg, #ffffff1d 0%, #ffe4bc95 100%);
   background-size: 200% 100%;
   z-index: -2;
+}
+
+/* Адаптивность под мобильные устройства */
+@media (max-width: 1024px) {
+  .MainPage {
+    flex-direction: column; /* Меняем направление на колонку */
+    justify-content: flex-start; /* Выравнивание по верху */
+  }
+
+  .Innovation-text {
+    margin-top: 150px; /* Меньше отступ сверху */
+    width: 90%; /* Увеличиваем ширину */
+    height: auto; /* Убираем ограничение по высоте */
+    gap: 40px; /* Уменьшаем расстояние между элементами */
+  }
+
+  .Innovation-text h1 {
+    font-size: 40px; /* Уменьшаем размер заголовка */
+  }
+
+  .Innovation-text p {
+    font-size: 1.5rem; /* Уменьшаем размер текста */
+    max-width: 90%; /* Увеличиваем ширину */
+  }
+
+  .Buttons-div {
+    gap: 5em; /* Меньше расстояние между кнопками */
+  }
+
+  .More-button {
+    width: 220px; /* Уменьшаем ширину кнопки */
+    height: 50px; /* Уменьшаем высоту кнопки */
+    margin-bottom: 5%; /* Меньше отступ снизу */
+  }
+  
+  .Ball-container {
+    width: 100%; /* Шарики должны оставаться на экране */
+    height: 100%;
+  }
+
+  .Ball {
+    width: 30px; /* Уменьшаем размер шариков */
+    height: 30px;
+  }
+
+  /* Меньше расстояние и анимация для линий */
+  .Line {
+    height: 1px;
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Innovation-text {
+    margin-top: 100px; /* Меньше отступ сверху */
+  }
+
+  .Innovation-text h1 {
+    font-size: 28px; /* Уменьшаем размер заголовка */
+  }
+
+  .Innovation-text p {
+    font-size: 1.2rem; /* Меньше размер текста */
+    max-width: 90%;
+  }
+
+  .More-button {
+    width: 200px; /* Уменьшаем размер кнопки */
+    height: 45px;
+  }
+
+  .Ball {
+    width: 25px; /* Уменьшаем размер шариков */
+    height: 25px;
+  }
+
+  .Line {
+    width: 70%; /* Меньше ширина линий */
+  }
+}
+
+@media (max-width: 480px) {
+  .MainPage {
+    justify-content: flex-start; /* Позиционирование вверху */
+    padding: 0 15px; /* Добавляем отступы по бокам */
+  }
+
+  .Innovation-text {
+    margin-top: 50px; /* Меньше отступ сверху */
+    width: 100%; /* Ширина текста на весь экран */
+    gap: 20px;
+  }
+
+  .Innovation-text h1 {
+    font-size: 22px; /* Уменьшаем размер заголовка */
+  }
+
+  .Innovation-text p {
+    font-size: 1rem; /* Уменьшаем размер текста */
+    max-width: 100%;
+  }
+
+  .More-button {
+    width: 180px; /* Уменьшаем размер кнопки */
+    height: 40px;
+    margin-bottom: 10%; /* Меньше отступ снизу */
+  }
+
+  .Ball {
+    width: 20px; /* Меньше размер шариков */
+    height: 20px;
+  }
+
+  .Line {
+    width: 50%; /* Меньше ширина линий */
+  }
 }

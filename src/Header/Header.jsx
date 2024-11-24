@@ -1,30 +1,27 @@
 import React from "react";
 import "./Header.css";
-import { Link, useLocation } from "react-router-dom";
 
 export const Header = () => {
-    const location = useLocation();
-
   return (
     <div className="Header-div">
+      <h1 id="Logotype">Neuroflex</h1>
       <nav>
-        <Link to="/" className="Logotype"><h1 id="Logotype">Neuroflex</h1></Link>
-        <div className="Company-info">
-          <Link to="/about" className={location.pathname === "/about" ? "active" : "inactive"}>
+        <div className="nav-buttons">
+          <div className="nav-div">
             <p>О компании</p>
-          </Link>
-          <Link to="/services" className={location.pathname === "/services" ? "active" : "inactive"}>
+          </div>
+          <div className="nav-div">
             <p>Услуги</p>
-          </Link>
-          <Link to="/portfolio" className={location.pathname === "/portfolio" ? "active" : "inactive"}>
+          </div>
+          <div className="nav-div">
             <p>Портфолио</p>
-          </Link>
-          <Link to="/feedbacks" className={location.pathname === "/feedbacks" ? "active" : "inactive"}>
+          </div>
+          <div className="nav-div">
             <p>Отзывы</p>
-          </Link>
-          <Link to="contacts" className={location.pathname === "/contacts" ? "active" : "inactive"}>
+          </div>
+          <div className="nav-div">
             <p>Контакты</p>
-          </Link>
+          </div>
         </div>
       </nav>
     </div>

@@ -1,50 +1,43 @@
 .Header-div {
   display: flex;
-  justify-content: center;
+  position: fixed; /* Фиксация хедера */
+  top: 0; /* Закрепить хедер сверху */
+  width: 100%; /* Чтобы хедер растягивался на всю ширину */
+  justify-content: space-between;
+  margin-right: 360px;
+  margin-left: 360px;
+  align-items: center;
+  z-index: 1000; /* Чтобы хедер был поверх других элементов */
+  transition: background-color 0.3s ease; /* Плавное изменение фона */
 }
-.Header-div nav {
+
+.nav-buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 28.5em;
-  width: 100%;
 }
 
-.Company-info {
-  display: flex;
-  justify-content: flex-end;
-  gap: 2em;
-  font: 400 16px "Roboto", sans-serif;
-}
-
-.Logotype {
-  text-align: center;
+.nav-div {
+  margin-left: 20px;
+  white-space: nowrap;
+  color: white;
+  font: 400 20px "Roboto", sans-serif;
 }
 
 #Logotype {
   width: 100%;
   height: 49px;
-
   font-family: "Montserrat", sans-serif !important;
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
   line-height: 49px;
-
-  background: linear-gradient(90deg, #6f00ff 0%, #05fff1 100%);
+  background: linear-gradient(90deg, #6F00FF 0%, #00fff2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.Company-info a{
-  color: white;
-}
-
-.Company-info a:hover {
-  color: #6f00ff;
-}
-
-.active {
-  color: #05fff1 !important;
+/* Класс для затемнения фона хедера */
+.Header-div.scrolled {
+  background-color: rgba(0, 0, 0, 0.8); /* Темный фон */
 }

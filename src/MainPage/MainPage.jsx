@@ -105,6 +105,8 @@ export const MainPage = () => {
     };
   }, [ballPositions]);
 
+  
+
   // Функция для получения актуальных координат шариков с учётом прокрутки
   const getBallCenter = (ball) => {
     const ballElem = ballRefs.current[ball.id];

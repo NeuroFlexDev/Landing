@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import "./AboutPage.css"
 
 export const AboutPage = () => {
   return (
-    <div>
-            <div className="Neuroflex-team">
+    <div className="AboutPage-div">
+      <div className="Neuroflex-team">
         <div className="Neuroflex-team-left">
           <p>
             «NeuroFlex» — это команда профессионалов, специализирующихся на
@@ -21,7 +22,6 @@ export const AboutPage = () => {
           </p>
         </div>
       </div>
-      
     </div>
-  )
-}
+  );
+};

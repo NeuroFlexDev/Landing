@@ -102,7 +102,7 @@ export const MainPage = ({ scrollToAbout }) => {
       clearInterval(interval);
       clearInterval(lineGenerationInterval);
     };
-  }, [ballPositions]);
+  }, [generateLine, updatePositions, ballPositions]);
 
   
 
@@ -164,9 +164,9 @@ export const MainPage = ({ scrollToAbout }) => {
           const { centerX: startX, centerY: startY } = getBallCenter(startBall);
           const { centerX: endX, centerY: endY } = getBallCenter(endBall);
 
-          const distance = Math.sqrt(
-            Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2)
-          );
+          // const distance = Math.sqrt(
+          //   Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2)
+          // );
 
           const angle = Math.atan2(endY - startY, endX - startX);
 

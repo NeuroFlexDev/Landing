@@ -1,40 +1,41 @@
+/* Основные стили */
 .AboutPage-div {
-    display: flex;
-    justify-content: center;
-
-    padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
 }
+
 .Neuroflex-team {
-    color: white;
-    display: flex;
-    justify-content: center;
-    width: 70%;
-    gap: 4.5em;
-  }
-  
-  .Neuroflex-team-left {
-    width: 50%;
-    font-family: "Montserrat";
-    font-style: italic;
-    font-weight: 600;
-    font-size: 36px;
-  }
-  
-  .Neuroflex-team-right {
-    width: 50%;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-  }
-  
-  .Neuroflex-team-right span {
-    background: linear-gradient(93.41deg, #b388eb 0%, #00aea4 60%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-  }
+  color: white;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  gap: 4.5em;
+}
+
+.Neuroflex-team-left {
+  width: 50%;
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.Neuroflex-team-right {
+  width: 50%;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.Neuroflex-team-right span {
+  background: linear-gradient(93.41deg, #b388eb 0%, #00aea4 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 
 /* Стили для экрана 1024px и меньше */
 @media (max-width: 1024px) {
@@ -91,5 +92,47 @@
   }
   .Neuroflex-team-right {
       font-size: 16px; /* Еще больше уменьшаем размер шрифта */
+  }
+}
+/* Адаптация для планшетов */
+@media (max-width: 768px) {
+  .AboutPage-div {
+      padding-top: 80px;
+      flex-direction: column;
+  }
+
+  .Neuroflex-team {
+      width: 90%;
+      flex-direction: column;
+      gap: 2em;
+  }
+
+  .Neuroflex-team-left, .Neuroflex-team-right {
+      width: 100%;
+      text-align: center;
+      font-size: 28px; /* Уменьшаем размер текста для меньших экранов */
+  }
+
+  .Neuroflex-team-right {
+      font-size: 20px;
+  }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 480px) {
+  .AboutPage-div {
+      padding-top: 60px;
+  }
+
+  .Neuroflex-team {
+      width: 100%;
+  }
+
+  .Neuroflex-team-left, .Neuroflex-team-right {
+      font-size: 20px; /* Еще меньше для небольших экранов */
+  }
+
+  .Neuroflex-team-right {
+      font-size: 16px;
   }
 }

@@ -258,16 +258,19 @@
 
   .Innovation-text h1 {
     font-size: 22px; /* Уменьшаем размер заголовка */
+    margin-top: 30%;
   }
 
   .Innovation-text p {
     font-size: 1rem; /* Уменьшаем размер текста */
+    margin-top: 30%;
     max-width: 100%;
   }
 
   .More-button {
     width: 180px; /* Уменьшаем размер кнопки */
     height: 40px;
+    margin-top: 50%;
     margin-bottom: 10%; /* Меньше отступ снизу */
   }
 

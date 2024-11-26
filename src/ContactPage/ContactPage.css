@@ -7,7 +7,6 @@
   width: 100%;
   height: 100vh;
   color: white;
-  font-family: 'Arial', sans-serif;
   position: relative;
   /* Для декоративных линий */
 }
@@ -31,15 +30,19 @@
   text-align: center;
   font-size: 80px;
   margin-bottom: 1em;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .contact-page-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 30%;
 }
 
 .contact-page-input {
+  width: 100%;
+  font-size: 24px;
   padding: 0.8em;
   height: 55px;
   margin-bottom: 1em;
@@ -51,7 +54,6 @@
 }
 
 .contact-page-button {
-  padding: 0.8em;
   margin-top: 25px;
   border: none;
   border-radius: 25px;
@@ -59,6 +61,8 @@
   color: white;
   cursor: pointer;
   height: 45px;
+  font-size: 24px;
+  width: 80%;
 }
 
 .social-icons {
@@ -179,11 +183,13 @@
   .contact-page-input {
     height: 40px;
     padding: 0.6em;
+    font-size: 18px;
   }
 
   .contact-page-button {
     height: 35px;
     padding: 0.6em;
+    font-size: 18px;
   }
 
   .social-icon {

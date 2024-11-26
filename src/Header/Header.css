@@ -29,7 +29,7 @@
   font: 400 20px "Roboto", sans-serif;
 }
 
-.nav-div:hover{
+.nav-div:hover {
   color: #6F00FF;
 }
 
@@ -72,12 +72,12 @@
 /* Адаптивность для планшетов и телефонов */
 @media (max-width: 1024px) {
   .Header-div {
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
 
   .nav-buttons {
-    margin-right: 25%;
+    margin-right: 0;
     display: none; /* Скрываем меню по умолчанию */
     flex-direction: column;
     width: 100%;
@@ -85,7 +85,7 @@
   }
 
   #Logotype {
-    margin-left: 25%;
+    margin-left: 0;
     font-size: 35px;
   }
 
@@ -96,19 +96,43 @@
 
 @media (max-width: 768px) {
   #Logotype {
-    font-size: 35px;
-    margin-left: 25%;
+    font-size: 30px; /* Уменьшение логотипа для мобильных устройств */
+    margin-left: 0;
   }
 
   .nav-div {
-    font-size: 18px;
+    font-size: 16px; /* Уменьшение размера шрифта для мобильных устройств */
+  }
+
+  .nav-buttons.active {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 50px; /* Позиционирование меню */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Тёмный фон для меню */
+    padding: 20px 0;
   }
 }
 
-/* Показ меню при активации бургер-меню */
-.nav-buttons.active {
-  display: flex;
-  position: absolute;
-  left: 200px;
+/* Адаптивность для больших экранов */
+@media (min-width: 1980px) {
+  .Header-div {
+    justify-content: space-between; /* Для больших экранов меню размещается по бокам */
+    padding: 0 50px;
+  }
 
+  .nav-buttons {
+    /* margin-right: 0; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-div{
+    font-size: 25px;
+  }
+
+  #Logotype {
+    font-size: 55px; /* Увеличение логотипа для больших экранов */
+  }
 }

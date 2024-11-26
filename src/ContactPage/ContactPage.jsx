@@ -71,10 +71,10 @@ export const ContactPage = () => {
         <a href="https://t.me/neuroflex_tg" className="social-icon">
           <img src="./asserts/tg-icon.svg" alt="Telegram" />
         </a>
-        <a href="#" className="social-icon">
+        <a href="https://vk.com/club228437463" className="social-icon">
           <img src="./asserts/vk-icon.svg" alt="VK" />
         </a>
-        <a href="#" className="social-icon">
+        <a href="https://wa.clck.bar/79081793583?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D0%B4%D0%B8%20%D0%B2%20%D0%B4%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D0%BD%D1%8B" className="social-icon">
           <img src="./asserts/whatsapp.svg" alt="WhatsApp" />
         </a>
         <a href="mailto:nosignalx2k@neuroflex.bizml.ru" className="social-icon">

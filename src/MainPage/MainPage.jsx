@@ -5,7 +5,15 @@ export const MainPage = ({ scrollToAbout }) => {
   const [ballPositions, setBallPositions] = useState([]);
   const [lines, setLines] = useState([]);
   const ballRefs = useRef([]);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
+  const handleMouseMove = (e) => {
+    setCursorPos({
+      x: e.clientX,
+      y: e.clientY
+    });
+  };
+  
   // Генерация случайных позиций для шариков
   useEffect(() => {
     const generateBalls = () => {
@@ -70,42 +78,22 @@ export const MainPage = ({ scrollToAbout }) => {
       setLines((prevLines) => [...prevLines, newLine]);
     }
   };
-
-  // Функция для обновления позиций шариков с анимацией покачивания
-  const updatePositions = () => {
-    const newPositions = ballPositions.map((ball) => {
-      const offsetX = Math.sin((ball.offsetX += 0.05)) * ball.amplitudeX;
-      const offsetY = Math.cos((ball.offsetY += 0.05)) * ball.amplitudeY;
-
-      return {
-        ...ball,
-        left: `${parseFloat(ball.left) + offsetX}px`,
-        top: `${parseFloat(ball.top) + offsetY}px`,
-      };
-    });
-
-    setBallPositions(newPositions); // Обновляем позиции шариков
-  };
+  
 
   // Запуск обновления позиций и линий
   useEffect(() => {
-    const interval = setInterval(() => {
-      updatePositions(); // Запуск обновления анимации
-    }, 1000 / 60); // 60 fps
 
     const lineGenerationInterval = setInterval(() => {
       generateLine(); // Генерация одной линии раз в 1 секунду
-    }, 15); // интервал в 1 секунду
+    }, 10); // интервал в 1 секунду
 
     // Очистка при размонтировании компонента
     return () => {
-      clearInterval(interval);
       clearInterval(lineGenerationInterval);
     };
-  }, [generateLine, updatePositions, ballPositions]);
+  }, [generateLine, cursorPos, ballPositions]);
 
   
-
   // Функция для получения актуальных координат шариков с учётом прокрутки
   const getBallCenter = (ball) => {
     const ballElem = ballRefs.current[ball.id];
@@ -122,8 +110,28 @@ export const MainPage = ({ scrollToAbout }) => {
     return { centerX: 0, centerY: 0 };
   };
 
+  // Параллакс эффект для шариков
+  const calculateParallax = (ball) => {
+    const { x: cursorX, y: cursorY } = cursorPos;
+    const ballCenter = getBallCenter(ball);
+    
+    const deltaX = cursorX - ballCenter.centerX;
+    const deltaY = cursorY - ballCenter.centerY;
+
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    const maxOffset = 28; // Максимальное смещение
+    
+    const offsetX = (deltaX / distance) * Math.min(maxOffset, distance);
+    const offsetY = (deltaY / distance) * Math.min(maxOffset, distance);
+
+    return {
+      offsetX,
+      offsetY
+    };
+  };
+
   return (
-    <div className="MainPage">
+    <div className="MainPage" onMouseMove={handleMouseMove}>
       <div className="Innovation-text">
         <h1>Инновации в области машинного обучения для вашего бизнеса</h1>
         <p>
@@ -138,23 +146,27 @@ export const MainPage = ({ scrollToAbout }) => {
 
       {/* Шарики на фоне */}
       <div className="Ball-container">
-        {ballPositions.map((pos, index) => (
-          <div
-            key={pos.id}
-            className="Ball"
-            ref={(el) => (ballRefs.current[pos.id] = el)}
-            style={{
-              top: pos.top,
-              left: pos.left,
-              width: pos.width,
-              height: pos.width,
-              filter: `blur(${pos.blur})`, // Применяем случайный блюр
-              animation: `wobbleX ${pos.speedX}s infinite ease-in-out, wobbleY ${pos.speedY}s infinite ease-in-out`,
-              animationDirectionX: pos.directionX === 1 ? "normal" : "reverse",
-              animationDirectionY: pos.directionY === 1 ? "normal" : "reverse",
-            }}
-          />
-        ))}
+        {ballPositions.map((pos, index) => {
+          const { offsetX, offsetY } = calculateParallax(pos);
+          
+          return (
+            <div
+              key={pos.id}
+              className="Ball"
+              ref={(el) => (ballRefs.current[pos.id] = el)}
+              style={{
+                top: `calc(${pos.top} + ${offsetY}px)`,
+                left: `calc(${pos.left} + ${offsetX}px)`,
+                width: pos.width,
+                height: pos.width,
+                filter: `blur(${pos.blur})`, // Применяем случайный блюр
+                animation: `wobbleX ${pos.speedX}s infinite ease-in-out, wobbleY ${pos.speedY}s infinite ease-in-out`,
+                animationDirectionX: pos.directionX === 1 ? "normal" : "reverse",
+                animationDirectionY: pos.directionY === 1 ? "normal" : "reverse",
+              }}
+            />
+          );
+        })}
 
         {/* Линии (лучи) между шариками */}
         {lines.map((line, index) => {
@@ -163,10 +175,6 @@ export const MainPage = ({ scrollToAbout }) => {
 
           const { centerX: startX, centerY: startY } = getBallCenter(startBall);
           const { centerX: endX, centerY: endY } = getBallCenter(endBall);
-
-          // const distance = Math.sqrt(
-          //   Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2)
-          // );
 
           const angle = Math.atan2(endY - startY, endX - startX);
 

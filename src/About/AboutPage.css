@@ -15,7 +15,7 @@
 
 .Neuroflex-team-left {
   width: 50%;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif !important;
   font-style: italic;
   font-weight: 600;
   font-size: 36px;
@@ -23,7 +23,7 @@
 
 .Neuroflex-team-right {
   width: 50%;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -34,7 +34,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+  /* text-fill-color: transparent; */
 }
 
 /* Стили для экрана 1024px и меньше */
@@ -134,5 +134,25 @@
 
   .Neuroflex-team-right {
       font-size: 16px;
+  }
+}
+
+/* Стили для больших экранов (1440px и больше) */
+@media (min-width: 1440px) {
+  .AboutPage-div {
+      padding-top: 150px; /* Увеличиваем верхний отступ для больших экранов */
+  }
+
+  .Neuroflex-team {
+      width: 60%; /* Уменьшаем ширину контейнера, чтобы оставить больше пространства по бокам */
+      gap: 6em; /* Увеличиваем расстояние между колонками */
+  }
+
+  .Neuroflex-team-left {
+      font-size: 50px; /* Увеличиваем размер шрифта для более крупных экранов */
+  }
+
+  .Neuroflex-team-right {
+      font-size: 34px; /* Увеличиваем размер шрифта для более крупных экранов */
   }
 }

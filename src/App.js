@@ -8,21 +8,40 @@ import { ContactPage } from "./ContactPage/ContactPage.jsx"
 
 function App() {
   const aboutRef = useRef(null);
+  const serviceRef = useRef(null);
+  const contactRef = useRef(null);
 
-  // Функция прокрутки до AboutPage
+  // Функции прокрутки до разных разделов
   const scrollToAbout = () => {
     aboutRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToService = () => {
+    serviceRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToContact = () => {
+    contactRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+
   return (
     <div className="main-container">
-      <Header />
+      <Header
+        scrollToAbout={scrollToAbout}
+        scrollToService={scrollToService}
+        scrollToContact={scrollToContact}
+      />
       <MainPage scrollToAbout={scrollToAbout} />
       <div ref={aboutRef}>
         <AboutPage />
       </div>
-      <ServicePage />
-      <ContactPage />
+      <div ref={serviceRef}>
+        <ServicePage />
+      </div>
+      <div ref={contactRef}>
+        <ContactPage />
+      </div>
     </div>
   );
 }

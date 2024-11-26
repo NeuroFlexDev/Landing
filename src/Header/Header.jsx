@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 
-export const Header = () => {
+export const Header = ({ scrollToAbout, scrollToService, scrollToContact }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Состояние для отображения меню
 
   // Функция для переключения состояния меню
@@ -40,19 +40,19 @@ export const Header = () => {
       </button>
       <nav>
         <div className={`nav-buttons ${isMenuOpen ? 'active' : ''}`}>
-          <div className="nav-div">
+          <div className="nav-div" onClick={scrollToAbout}>
             <p>О компании</p>
           </div>
-          <div className="nav-div">
+          <div className="nav-div" onClick={scrollToService}>
             <p>Услуги</p>
           </div>
-          <div className="nav-div">
+          {/* <div className="nav-div">
             <p>Портфолио</p>
           </div>
           <div className="nav-div">
             <p>Отзывы</p>
-          </div>
-          <div className="nav-div">
+          </div> */}
+          <div className="nav-div" onClick={scrollToContact}>
             <p>Контакты</p>
           </div>
         </div>

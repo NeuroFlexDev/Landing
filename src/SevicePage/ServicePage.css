@@ -8,7 +8,7 @@
 }
 
 #services-p {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif !important;
   font-size: 48px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -21,6 +21,7 @@
   justify-content: center;
   gap: 25px;
   width: 100%;
+  margin-top: 5%;
   max-width: 1200px;
 }
 
@@ -30,7 +31,6 @@
   justify-content: center;
   align-items: center;
   flex: 1 1 250px;
-  /* Добавляем flex-grow, flex-shrink, и минимальную ширину */
   max-width: 350px;
   padding: 20px;
   background-color: #2c2f38;
@@ -56,6 +56,7 @@
   font-weight: 500;
   margin-bottom: 10px;
   text-align: center;
+  margin-top: 5%;
 }
 
 #card-description {
@@ -69,12 +70,10 @@
 @media (max-width: 1024px) {
   .Service-blocks {
     gap: 20px;
-    /* Уменьшенный отступ между карточками */
   }
 
   .Card {
     flex: 1 1 45%;
-    /* Две карточки в строку */
   }
 }
 
@@ -83,14 +82,11 @@
   .Service-blocks {
     gap: 20px;
     flex-direction: column;
-    /* Столбец */
   }
 
   .Card {
     flex: 1 1 100%;
-    /* Одна карточка в строку */
     max-width: 100%;
-    /* Полная ширина для каждой карточки */
   }
 }
 
@@ -98,7 +94,6 @@
 @media (max-width: 480px) {
   #services-p {
     font-size: 36px;
-    /* Уменьшаем размер заголовка */
   }
 
   .Service-blocks {
@@ -107,20 +102,55 @@
 
   .Card {
     width: 100%;
-    max-width: 90%; /* Полная ширина для каждой карточки */
+    max-width: 90%;
   }
 
   .Card-Icon {
     font-size: 60px;
-    /* Уменьшаем размер иконок */
   }
 
   #card-header {
     font-size: 18px;
-    /* Уменьшаем размер заголовка карточек */
   }
 
   #card-description {
     font-size: 14px;
+  }
+}
+
+/* Экран шириной 1440px и больше (для больших экранов) */
+@media (min-width: 1920px) {
+  .ServicePage-div {
+    padding: 40px;
+    margin-bottom: 10%;
+  }
+
+  #services-p {
+    font-size: 56px;
+    margin-bottom: 30px;
+  }
+
+  .Service-blocks {
+    gap: 30px;
+    max-width: 95%;
+  }
+
+  .Card {
+    flex: 1 1 22%;
+    max-width: 20%;
+    height: 300px;
+  }
+
+  .Card-Icon {
+    font-size: 80px;
+  }
+
+  #card-header {
+    margin-top: 5%;
+    font-size: 28px;
+  }
+
+  #card-description {
+    font-size: 24px;
   }
 }

@@ -45,7 +45,7 @@ export const ContactPage = () => {
 
   return (
     <div className="contact-page-container svg-background">
-      <h1 className="contact-page-title">Свяжитесь с нами для консультации</h1>
+      <p className="contact-page-title">Свяжитесь с нами для консультации</p>
 
       <form className="contact-page-form" onSubmit={handleSubmit}>
         <input

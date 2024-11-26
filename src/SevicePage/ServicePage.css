@@ -29,7 +29,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex: 1 1 250px; /* Добавляем flex-grow, flex-shrink, и минимальную ширину */
+  flex: 1 1 250px;
+  /* Добавляем flex-grow, flex-shrink, и минимальную ширину */
   max-width: 350px;
   padding: 20px;
   background-color: #2c2f38;
@@ -64,38 +65,54 @@
   text-align: center;
 }
 
-/* Медиазапросы для адаптивности */
-
-@media (max-width: 992px) {
+/* Экран шириной 1024px и меньше */
+@media (max-width: 1024px) {
   .Service-blocks {
     gap: 20px;
+    /* Уменьшенный отступ между карточками */
   }
+
   .Card {
-    flex: 1 1 45%; /* Две карточки в строку */
+    flex: 1 1 45%;
+    /* Две карточки в строку */
   }
 }
 
-@media (max-width: 576px) {
-  #services-p {
-    font-size: 36px;
-  }
-
+/* Экран шириной 768px и меньше */
+@media (max-width: 768px) {
   .Service-blocks {
-    flex-direction: column;
     gap: 20px;
+    flex-direction: column;
+    /* Столбец */
   }
 
   .Card {
-    width: 100%;
-    max-width: 100%; /* Полная ширина для каждой карточки */
+    flex: 1 1 100%;
+    /* Одна карточка в строку */
+    max-width: 100%;
+    /* Полная ширина для каждой карточки */
+  }
+}
+
+/* Экран шириной 480px и меньше */
+@media (max-width: 480px) {
+  #services-p {
+    font-size: 36px;
+    /* Уменьшаем размер заголовка */
+  }
+
+  .Service-blocks {
+    gap: 20px;
   }
 
   .Card-Icon {
     font-size: 60px;
+    /* Уменьшаем размер иконок */
   }
 
   #card-header {
     font-size: 18px;
+    /* Уменьшаем размер заголовка карточек */
   }
 
   #card-description {

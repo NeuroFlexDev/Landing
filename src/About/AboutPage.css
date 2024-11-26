@@ -36,3 +36,60 @@
     text-fill-color: transparent;
   }
 
+/* Стили для экрана 1024px и меньше */
+@media (max-width: 1024px) {
+  .AboutPage-div {
+      padding-top: 80px; /* Уменьшаем верхний отступ */
+  }
+  .Neuroflex-team {
+      width: 80%; /* Увеличиваем ширину, чтобы контент занимал больше места */
+      gap: 3em; /* Уменьшаем расстояние между колонками */
+  }
+  .Neuroflex-team-left {
+      font-size: 30px; /* Уменьшаем размер шрифта */
+  }
+  .Neuroflex-team-right {
+      font-size: 20px; /* Уменьшаем размер шрифта */
+  }
+}
+
+/* Стили для экрана 768px и меньше */
+@media (max-width: 768px) {
+  .AboutPage-div {
+      padding-top: 60px; /* Еще больше уменьшаем верхний отступ */
+  }
+  .Neuroflex-team {
+      width: 90%; /* Еще увеличиваем ширину */
+      flex-direction: column; /* Меняем расположение на вертикальное */
+      align-items: center; /* Центрируем элементы по горизонтали */
+      gap: 2em; /* Уменьшаем расстояние между блоками */
+  }
+  .Neuroflex-team-left,
+  .Neuroflex-team-right {
+      width: 100%; /* Блоки занимают всю ширину */
+      text-align: center; /* Центрируем текст */
+  }
+  .Neuroflex-team-left {
+      font-size: 26px; /* Уменьшаем размер шрифта */
+  }
+  .Neuroflex-team-right {
+      font-size: 18px; /* Уменьшаем размер шрифта */
+  }
+}
+
+/* Стили для экрана 480px и меньше */
+@media (max-width: 480px) {
+  .AboutPage-div {
+      padding-top: 40px; /* Еще уменьшаем верхний отступ */
+  }
+  .Neuroflex-team {
+      width: 95%; /* Почти полностью заполняем ширину экрана */
+      gap: 1.5em; /* Уменьшаем отступ между блоками */
+  }
+  .Neuroflex-team-left {
+      font-size: 22px; /* Еще больше уменьшаем размер шрифта */
+  }
+  .Neuroflex-team-right {
+      font-size: 16px; /* Еще больше уменьшаем размер шрифта */
+  }
+}

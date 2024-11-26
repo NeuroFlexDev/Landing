@@ -1,112 +1,192 @@
 .contact-page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    color: white;
-    font-family: 'Arial', sans-serif;
-    position: relative; /* Для декоративных линий */
-  }
-  
-  
-  .contact-page-container::before {
-    top: 0;
-    left: 0;
-    transform: rotate(-45deg);
-  }
-  
-  .contact-page-container::after {
-    bottom: 0;
-    right: 0;
-    transform: rotate(45deg);
-  }
-  
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  /* Для декоративных линий */
+}
+
+
+.contact-page-container::before {
+  top: 0;
+  left: 0;
+  transform: rotate(-45deg);
+}
+
+.contact-page-container::after {
+  bottom: 0;
+  right: 0;
+  transform: rotate(45deg);
+}
+
+
+.contact-page-title {
+  max-width: 45%;
+  text-align: center;
+  font-size: 80px;
+  margin-bottom: 1em;
+}
+
+.contact-page-form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.contact-page-input {
+  padding: 0.8em;
+  height: 55px;
+  margin-bottom: 1em;
+  margin-top: 25px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.contact-page-button {
+  padding: 0.8em;
+  margin-top: 25px;
+  border: none;
+  border-radius: 25px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  height: 45px;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 25px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  margin: 0 0.5em;
+}
+
+
+.contact-page-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.svg-background {
+  background: url('./asserts/background-right.svg') no-repeat center/cover;
+}
+
+
+.message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+
+/* Медиазапросы для адаптивности */
+
+/* Экран шириной 1024px и меньше */
+@media (max-width: 1024px) {
   .contact-page-title {
-    max-width: 45%;
-    text-align: center;
-    font-size: 80px;
-    margin-bottom: 1em;
+    font-size: 60px;
+    max-width: 60%;
   }
-  
+
   .contact-page-form {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
+    width: 40%;
   }
-  
+
   .contact-page-input {
-    padding: 0.8em;
-    height: 55px;
-    margin-bottom: 1em;
-    margin-top: 25px;
-    border: none;
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
+    height: 50px;
   }
-  
+
   .contact-page-button {
-    padding: 0.8em;
-    margin-top: 25px;
-    border: none;
-    border-radius: 25px;
-    background-color: #3498db;
-    color: white;
-    cursor: pointer;
+    height: 40px;
+  }
+
+  .social-icon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Экран шириной 768px и меньше */
+@media (max-width: 768px) {
+  .contact-page-title {
+    font-size: 48px;
+    max-width: 75%;
+  }
+
+  .contact-page-form {
+    width: 60%;
+  }
+
+  .contact-page-input {
     height: 45px;
   }
-  
-  .social-icons {
-    display: flex;
-    margin-top: 25px;
+
+  .contact-page-button {
+    height: 40px;
   }
-  
+
   .social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    text-decoration: none;
-    margin: 0 0.5em;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Экран шириной 480px и меньше */
+@media (max-width: 480px) {
+  .contact-page-title {
+    font-size: 36px;
+    max-width: 90%;
   }
 
+  .contact-page-form {
+    width: 90%;
+  }
 
-  .contact-page-container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  .contact-page-input {
+    height: 40px;
+    padding: 0.6em;
   }
-  
-  .svg-background {
-    background: url('./asserts/background-right.svg') no-repeat center/cover;
-  }
-  
 
-  .message {
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
+  .contact-page-button {
+    height: 35px;
+    padding: 0.6em;
   }
-  
-  .message.success {
-    background-color: #d4edda;
-    color: #155724;
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
   }
-  
-  .message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-  }
-  
+}

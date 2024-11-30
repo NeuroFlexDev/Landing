@@ -82,10 +82,12 @@
     flex-direction: column;
     width: 100%;
     text-align: center;
+    margin-top: 15px;
   }
 
   #Logotype {
     margin-left: 0;
+    padding-left: 70px;
     font-size: 35px;
   }
 
@@ -98,6 +100,7 @@
   #Logotype {
     font-size: 30px; /* Уменьшение логотипа для мобильных устройств */
     margin-left: 0;
+    padding-left: 20px;
   }
 
   .nav-div {
@@ -112,6 +115,13 @@
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8); /* Тёмный фон для меню */
     padding: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #Logotype {
+    margin-left: 0;
+    padding-left: 35px;
   }
 }
 

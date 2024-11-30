@@ -24,7 +24,7 @@
   text-align: center;
   width: 70%;
   height: 80%;
-  
+
 }
 
 
@@ -98,13 +98,13 @@
   position: absolute;
   /* Добавление эффекта размытия */
   /* filter: blur(7px); Легкое размытие, можно настроить */
-  
+
   /* Добавление тени */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для объема */
-  
+
   /* Плавный переход для эффектов */
   transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  
+
   /* Применяем затемнение */
   background: linear-gradient(135deg, rgba(179, 136, 235, 1), rgba(0, 174, 164, 1)); /* Уменьшаем непрозрачность, чтобы сделать цвет более мягким */
 }
@@ -197,7 +197,7 @@
     height: 50px; /* Уменьшаем высоту кнопки */
     margin-bottom: 5%; /* Меньше отступ снизу */
   }
-  
+
   .Ball-container {
     width: 100%; /* Шарики должны оставаться на экране */
     height: 100%;
@@ -241,6 +241,27 @@
 
   .Line {
     width: 70%; /* Меньше ширина линий */
+  }
+}
+
+@media (max-width: 1605px) {
+  .Innovation-text h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 1480px) {
+  .Innovation-text h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1240px) {
+  .Innovation-text h1 {
+    font-size: 40px;
+  }
+  .Innovation-text p {
+    font-size: 1.5rem;
   }
 }
 
